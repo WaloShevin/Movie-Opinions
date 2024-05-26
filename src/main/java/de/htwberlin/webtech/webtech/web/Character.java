@@ -5,7 +5,10 @@ public class Character {
     private String name;
     private int power;
 
-    public Character() {
+    public Character( String name, int power) {
+       this.name = name;
+       this.power =power;
+
 
     }
 

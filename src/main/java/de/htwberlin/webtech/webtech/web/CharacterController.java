@@ -11,8 +11,8 @@ import java.util.List;
 @RestController
 public class CharacterController {
 
-    @GetMapping(path = "/")
+    @GetMapping(path = "/characters")
     public List<Character> showFantasyWorldPage(){
-        return List.of(new Character());
-    }
-}
+        return List.of(new Character( "lili", 6 ),
+        new Character ( "adam" , 5));
+} }
