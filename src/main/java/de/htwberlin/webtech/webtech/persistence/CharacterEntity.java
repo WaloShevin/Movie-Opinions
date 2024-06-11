@@ -1,9 +1,6 @@
 package de.htwberlin.webtech.webtech.persistence;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import javax.annotation.processing.Generated;
 
@@ -16,13 +13,15 @@ public class CharacterEntity {
     private Long id;
     private String name;
     private int age;
-    private String gender;
+
+    @Enumerated(value = EnumType.STRING)
+    private Gender gender;
     private String species;
     private String significantSkill;
     private String weakness;
 
 
-    public CharacterEntity( Long id, String name, int age, String gender, String species,String significantSkill, String weakness ) {
+    public CharacterEntity( Long id, String name, int age, Gender gender, String species,String significantSkill, String weakness ) {
         this.id= id;
         this.name = name;
         this.age=age;
@@ -63,11 +62,11 @@ public class CharacterEntity {
         this.age = age;
     }
 
-    public String getGender() {
+    public Gender getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(Gender gender) {
         this.gender = gender;
     }
 
