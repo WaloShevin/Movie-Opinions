@@ -1,6 +1,17 @@
-package de.htwberlin.webtech.webtech.web;
+package de.htwberlin.webtech.webtech.persistence;
 
-public class Character {
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+import javax.annotation.processing.Generated;
+
+@Entity(name = "characters")
+public class CharacterEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long id;
     private String name;
@@ -11,26 +22,25 @@ public class Character {
     private String weakness;
 
 
+    public CharacterEntity( Long id, String name, int age, String gender, String species,String significantSkill, String weakness ) {
+        this.id= id;
+        this.name = name;
+        this.age=age;
+        this.gender =gender;
+        this.species = species;
+        this.significantSkill = significantSkill;
+        this.weakness = weakness;
 
-    public Character( Long id, String name, int age, String gender, String species,String significantSkill, String weakness ) {
-       this.id= id;
-       this.name = name;
-       this.age=age;
-       this.gender =gender;
-       this.species = species;
-       this.significantSkill = significantSkill;
-       this.weakness = weakness;
 
 
+    }
+
+    public CharacterEntity() {
 
     }
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -39,6 +49,10 @@ public class Character {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public int getAge() {
