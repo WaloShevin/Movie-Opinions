@@ -30,8 +30,6 @@ public class CharacterEntity {
         this.significantSkill = significantSkill;
         this.weakness = weakness;
 
-
-
     }
 
     public CharacterEntity() {
