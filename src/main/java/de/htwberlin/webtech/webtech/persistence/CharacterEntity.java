@@ -20,8 +20,11 @@ public class CharacterEntity {
     private String significantSkill;
     private String weakness;
 
+    private String story;
+    
 
-    public CharacterEntity( Long id, String name, int age, Gender gender, String species,String significantSkill, String weakness ) {
+
+    public CharacterEntity( Long id, String name, int age, Gender gender, String species,String significantSkill, String weakness, String story ) {
         this.id= id;
         this.name = name;
         this.age=age;
@@ -29,6 +32,8 @@ public class CharacterEntity {
         this.species = species;
         this.significantSkill = significantSkill;
         this.weakness = weakness;
+        this.story = story;
+
 
     }
 
@@ -91,4 +96,14 @@ public class CharacterEntity {
     public void setWeakness(String weakness) {
         this.weakness = weakness;
     }
+
+    public String getStory() {
+        return story;
+    }
+
+    public void setStory(String story) {
+        this.story = story;
+    }
+
+
 }
