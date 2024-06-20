@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/characters")
+@CrossOrigin(origins = "http://localhost:3000")
 public class CharacterController {
 
     @Autowired
