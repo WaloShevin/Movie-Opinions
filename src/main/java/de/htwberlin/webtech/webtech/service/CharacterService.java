@@ -21,11 +21,31 @@ public class CharacterService {
         return characterRepository.save(character);
     }
 
+    public CharacterEntity updateCharacter(CharacterEntity character) {
+        return characterRepository.save(character);
+    }
+
     public void deleteCharacter(Long id) {
         characterRepository.deleteById(id);
     }
 
     public CharacterEntity getCharacterById(Long id) {
         return characterRepository.findById(id).orElse(null);
+    }
+
+    public List<CharacterEntity> searchByWeakness(String weakness) {
+        return characterRepository.findByWeaknessContainingIgnoreCase(weakness);
+    }
+
+    public List<CharacterEntity> searchByName(String name) {
+        return characterRepository.findAllByName(name);
+    }
+
+    public List<CharacterEntity> getAllCharactersSortedByAgeDesc() {
+        return characterRepository.findAllByOrderByAgeDesc();
+    }
+
+    public List<CharacterEntity> getAllCharactersSortedByAgeAsc() {
+        return characterRepository.findAllByOrderByAgeAsc();
     }
 }

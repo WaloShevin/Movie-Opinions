@@ -9,5 +9,10 @@ import java.util.List;
 public interface CharacterRepository extends JpaRepository<CharacterEntity, Long> {
 
     List<CharacterEntity> findAllByName(String name);
+    List<CharacterEntity> findByWeaknessContainingIgnoreCase(String weakness);
+
+    List<CharacterEntity> findAllByOrderByAgeDesc();
+
+    List<CharacterEntity> findAllByOrderByAgeAsc();
 
 }
